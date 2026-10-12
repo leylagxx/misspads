@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Miss</title>
+<meta name="description" content="Miss — женские гигиенические прокладки и цветочное мыло. С любовью к себе. Alsem KZ, Алматы.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: one calm column (max 1120px); the packaging art carries the colour,
+   the page itself stays quiet. Light = day box (peach, plum ink), dark = night box (navy, white ink). */
+:root{
+  --bg:#fcf4ef;          /* cream with a peach bias */
+  --surface:#ffffff;
+  --surface-2:#f8e6de;
+  --fg:#4a2338;          /* plum ink from the day box logo */
+  --muted:#7a5a68;
+  --line:#efd4c9;
+  --accent:#f4a894;      /* day box plate peach */
+  --accent-deep:#d9705f;
+  --accent-ink:#4a2338;  /* text on accent */
+  --beige:#edd7b5;       /* liner box */
+  --navy:#21283d;
+  --shadow:0 18px 50px rgba(74,35,56,.14);
+  --hero-day:block; --hero-night:none;
+  --font-display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-body:Montserrat,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121a33; --surface:#1b2340; --surface-2:#232c4d; --fg:#f6eef0; --muted:#b9b1c2; --line:#2f3a5e;
+    --accent:#f4a894; --accent-deep:#f7b8a7; --accent-ink:#2a1a26; --beige:#d9c3a3; --navy:#0d1328;
+    --shadow:0 18px 50px rgba(0,0,0,.45); --hero-day:none; --hero-night:block; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121a33; --surface:#1b2340; --surface-2:#232c4d; --fg:#f6eef0; --muted:#b9b1c2; --line:#2f3a5e;
+  --accent:#f4a894; --accent-deep:#f7b8a7; --accent-ink:#2a1a26; --beige:#d9c3a3; --navy:#0d1328;
+  --shadow:0 18px 50px rgba(0,0,0,.45); --hero-day:none; --hero-night:block; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:20px}
+section{padding-block:72px}
+@media (max-width:640px){section{padding-block:52px}}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep)}
+.h2{font-size:clamp(28px,4vw,40px);margin-top:10px}
+.lead{color:var(--muted);max-width:60ch;margin-top:14px}
+body [lang="kk"],body [lang="ru"]{display:none}
+:root[data-lang="ru"] [lang="ru"],:root[data-lang="kk"] [lang="kk"]{display:inline}
+:root[data-lang="ru"] p[lang="ru"],:root[data-lang="kk"] p[lang="kk"],
+:root[data-lang="ru"] li[lang="ru"],:root[data-lang="kk"] li[lang="kk"],
+:root[data-lang="ru"] div[lang="ru"],:root[data-lang="kk"] div[lang="kk"]{display:block}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:66px}
+.logo{display:flex;align-items:center;color:var(--fg)}
+.logo svg{height:40px;width:auto}
+nav.main{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:500}
+nav.main a{text-decoration:none;color:var(--muted)}
+nav.main a:hover{color:var(--fg)}
+@media (max-width:720px){nav.main{display:none}}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:12px;font-weight:600;letter-spacing:.06em}
+.lang button{all:unset;cursor:pointer;padding:6px 11px;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.lang button:focus-visible,.btn:focus-visible,.copy:focus-visible{outline:2px solid var(--accent-deep);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:48px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:32px}}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-style:italic;font-weight:400;margin-top:14px}
+.hero .lead{font-size:17px;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border-color:var(--line);color:var(--fg)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;font-size:13px;color:var(--muted)}
+.facts span{display:inline-flex;align-items:center;gap:8px}
+.facts i{width:6px;height:6px;border-radius:50%;background:var(--accent-deep)}
+.pack{position:relative;max-width:440px;margin-inline:auto;width:100%}
+.pack img{border-radius:18px;box-shadow:var(--shadow);width:100%}
+.pack .day{display:var(--hero-day)} .pack .night{display:var(--hero-night)}
+.pack .tag{position:absolute;left:-14px;bottom:28px;background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);font-size:13px;line-height:1.35}
+.pack .tag b{display:block;font-family:var(--font-display);font-size:22px;font-weight:500}
+@media (max-width:860px){.pack .tag{left:8px}}
+
+/* products */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+@media (max-width:900px){.grid3{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card img{aspect-ratio:9/10;object-fit:cover;width:100%}
+.card.liner img{aspect-ratio:9/10;object-position:50% 35%}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:24px}
+.card .spec{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.card .spec b{color:var(--fg);font-weight:600}
+.card p{color:var(--muted);font-size:14.5px}
+.drops{display:inline-flex;gap:3px;align-items:center;color:var(--accent-deep)}
+.drops svg{width:12px;height:14px}
+.drops svg.off{opacity:.3}
+.chip{display:inline-flex;align-items:center;gap:7px;align-self:flex-start;margin-top:auto;font-size:12.5px;font-weight:600;color:var(--fg);background:var(--surface-2);border-radius:999px;padding:6px 12px}
+.chip svg{width:14px;height:14px}
+.ean{font-size:11px;color:var(--muted);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+
+/* advantages */
+.adv{background:var(--surface);border-block:1px solid var(--line)}
+.adv .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:38px}
+@media (max-width:900px){.adv .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.adv .grid{grid-template-columns:1fr}}
+.adv .item{min-width:0}
+.adv .ico{width:52px;height:52px;border-radius:50%;background:var(--surface-2);color:var(--accent-deep);display:grid;place-items:center;margin-bottom:16px}
+.adv .ico svg{width:26px;height:26px}
+.adv h3{font-size:19px;margin-bottom:8px}
+.adv p{font-size:14.5px;color:var(--muted)}
+
+/* inside */
+.inside .cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:38px}
+@media (max-width:760px){.inside .cols{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;min-width:0}
+.panel h3{font-size:22px;margin-bottom:6px}
+.panel .sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+.panel ol,.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.panel li{display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:14.5px;color:var(--muted);align-items:start}
+.panel li b{display:none}
+.panel li .n{width:28px;height:28px;border-radius:50%;background:var(--surface-2);color:var(--fg);font-size:12px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.panel ul li .n{background:transparent;color:var(--accent-deep)}
+.panel ul li .n svg{width:16px;height:16px}
+
+/* band */
+.band{position:relative;overflow:hidden;border-radius:24px;color:#fff;min-height:300px;display:flex;align-items:flex-end}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.band .day{display:var(--hero-day)} .band .night{display:var(--hero-night)}
+.band .in{position:relative;padding:36px;background:linear-gradient(to top,rgba(20,15,30,.55),rgba(20,15,30,0));width:100%}
+.band h2{font-size:clamp(26px,3.6vw,36px);font-style:italic;font-weight:400}
+.band p{margin-top:8px;max-width:48ch;font-size:15px;opacity:.92}
+
+/* soap */
+.soap{background:var(--surface);border-block:1px solid var(--line)}
+.soaps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+@media (max-width:900px){.soaps{grid-template-columns:1fr 1fr}}
+.soapc{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--bg);min-width:0}
+.soapc img{aspect-ratio:1032/451;object-fit:cover;width:100%}
+.soapc .b{padding:14px 16px 16px}
+.soapc h3{font-size:18px}
+.soapc .ean{margin-top:4px}
+.soapnote{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:22px;font-size:14.5px;color:var(--muted)}
+@media (max-width:760px){.soapnote{grid-template-columns:1fr}}
+.soapnote b{color:var(--fg);font-weight:600}
+
+/* contact */
+.contact .box{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;margin-top:38px}
+@media (max-width:800px){.contact .box{grid-template-columns:1fr;padding:28px}}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.mail code{font-family:var(--font-body);font-size:18px;font-weight:600;background:var(--surface-2);padding:10px 16px;border-radius:12px;user-select:all;word-break:break-all}
+.copy{all:unset;cursor:pointer;font-size:13px;font-weight:600;color:var(--accent-deep);padding:8px 12px;border-radius:10px;border:1px solid var(--line)}
+.copy:hover{background:var(--surface-2)}
+.addr{font-size:14.5px;color:var(--muted);display:grid;gap:10px}
+.addr b{color:var(--fg);font-weight:600}
+.addr .row{display:grid;grid-template-columns:110px 1fr;gap:10px}
+@media (max-width:480px){.addr .row{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:30px 40px;font-size:12.5px;color:var(--muted)}
+footer .wrap{display:grid;gap:14px}
+footer .logo svg{height:30px;color:var(--fg)}
+footer p{max-width:90ch}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Miss">
+      <svg viewBox="0 0 114.29 78.73" aria-hidden="true"><use href="#logo-miss"/></svg>
+    </a>
+    <nav class="main" aria-label="Разделы">
+      <a href="#products"><span lang="kk">Өнімдер</span><span lang="ru">Продукция</span></a>
+      <a href="#why"><span lang="kk">Артықшылықтар</span><span lang="ru">Преимущества</span></a>
+      <a href="#soap"><span lang="kk">Сабын</span><span lang="ru">Мыло</span></a>
+      <a href="#contact"><span lang="kk">Байланыс</span><span lang="ru">Контакты</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Тіл / Язык">
+      <button type="button" id="lang-kk" data-lang="kk" aria-pressed="false">ҚАЗ</button>
+      <button type="button" id="lang-ru" data-lang="ru" aria-pressed="true">РУС</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow"><span lang="kk">Әйелдерге арналған гигиеналық төсемдер</span><span lang="ru">Женские гигиенические прокладки</span></div>
+        <h1><span lang="kk">Өзіңе деген сүйіспеншілікпен</span><span lang="ru">С любовью к себе</span></h1>
+        <p class="lead" lang="kk">Күміс иондары, теріс иондар, алыс инфрақызыл сәулелер және биомагниттік компоненттері бар 4-і 1-де ендірмесі бар жұмсақ, ауа өткізетін төсемдер. Әр қаптамада дымқыл майлықтар бар.</p>
+        <p class="lead" lang="ru">Мягкие дышащие прокладки с функциональной вставкой 4 в 1: ионы серебра, отрицательные ионы, дальнее инфракрасное излучение и биомагнитные компоненты. В каждой упаковке есть влажные салфетки.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact"><span lang="kk">Тапсырыс беру</span><span lang="ru">Сделать заказ</span></a>
+          <a class="btn ghost" href="#products"><span lang="kk">Өнімдерді көру</span><span lang="ru">Смотреть продукцию</span></a>
+        </div>
+        <div class="facts">
+          <span><i></i><span lang="kk">3 түрі: 240 / 338 / 160 мм</span><span lang="ru">3 вида: 240 / 338 / 160 мм</span></span>
+          <span><i></i><span lang="kk">Күміс иондары бар ендірме</span><span lang="ru">Вставка с ионами серебра</span></span>
+          <span><i></i><span lang="kk">Алматы, Alsem KZ</span><span lang="ru">Алматы, Alsem KZ</span></span>
+        </div>
+      </div>
+      <div class="pack">
+        <img class="day" src="img/pad-day.jpg" width="711" height="788" alt="Коробка Miss дневные 10 шт">
+        <img class="night" src="img/pad-night.jpg" width="711" height="789" alt="Коробка Miss ночные 10 шт">
+        <div class="tag"><b>10 <span lang="kk">дана</span><span lang="ru">шт</span></b><span lang="kk">Жинақта дымқыл майлықтар бар</span><span lang="ru">В комплекте влажные салфетки</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="wrap">
+      <div class="eyebrow"><span lang="kk">Өнімдер</span><span lang="ru">Продукция</span></div>
+      <h2 class="h2"><span lang="kk">Үш түрі, әр күнге</span><span lang="ru">Три вида на каждый день</span></h2>
+      <p class="lead" lang="kk">Күндізгі, түнгі және күнделікті төсемдер. Барлық түрінің ортаңғы қабатында күміс иондары бар ендірме.</p>
+      <p class="lead" lang="ru">Дневные, ночные и ежедневные. У всех трёх в среднем слое вставка с ионами серебра.</p>
+      <div class="grid3">
+        <article class="card">
+          <img src="img/pad-day.jpg" width="711" height="788" alt="Miss дневные, 240 мм">
+          <div class="body">
+            <h3><span lang="kk">Күндізгі</span><span lang="ru">Дневные</span></h3>
+            <div class="spec"><span><b>240 мм</b></span><span><b>10</b> <span lang="kk">дана</span><span lang="ru">шт</span></span><span class="drops" aria-label="3 из 5"><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg></span></div>
+            <p lang="kk">Күндізге арналған: жылдам сіңіру және қозғалыста да құрғақтық сезімі.</p>
+            <p lang="ru">Для дня: быстрое впитывание и ощущение сухости даже в движении.</p>
+            <span class="chip"><svg viewBox="0 0 256 256"><use href="#wipes"/></svg><span lang="kk">Дымқыл майлықтар жинақта</span><span lang="ru">Влажные салфетки в комплекте</span></span>
+            <span class="ean">EAN 4870272150019</span>
+          </div>
+        </article>
+        <article class="card">
+          <img src="img/pad-night.jpg" width="711" height="789" alt="Miss ночные удлинённые, 338 мм">
+          <div class="body">
+            <h3><span lang="kk">Ұзартылған түнгі</span><span lang="ru">Ночные удлинённые</span></h3>
+            <div class="spec"><span><b>338 мм</b></span><span><b>10</b> <span lang="kk">дана</span><span lang="ru">шт</span></span><span class="drops" aria-label="4 из 5"><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg></span></div>
+            <p lang="kk">Ұзартылған пішіні мен көлемді құрылымы ағып кетудің алдын алады: түні бойы тыныш ұйқы.</p>
+            <p lang="ru">Удлинённая форма и объёмная структура не дают протечь: спокойный сон всю ночь.</p>
+            <span class="chip"><svg viewBox="0 0 256 256"><use href="#wipes"/></svg><span lang="kk">Дымқыл майлықтар жинақта</span><span lang="ru">Влажные салфетки в комплекте</span></span>
+            <span class="ean">EAN 4870272150026</span>
+          </div>
+        </article>
+        <article class="card liner">
+          <img src="img/pad-liner.jpg" width="711" height="599" alt="Miss ежедневные, 160 мм">
+          <div class="body">
+            <h3><span lang="kk">Күнделікті</span><span lang="ru">Ежедневные</span></h3>
+            <div class="spec"><span><b>160 мм</b></span><span><b>24</b> <span lang="kk">дана</span><span lang="ru">шт</span></span><span class="drops" aria-label="1 из 5"><svg viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg><svg class="off" viewBox="0 0 12 14"><use href="#drop"/></svg></span></div>
+            <p lang="kk">Қалыңдығы 1 мм, 5 қабат: байқалмайды, күн бойы сергектік сыйлайды.</p>
+            <p lang="ru">Толщина 1 мм, 5 слоёв: не ощущается и сохраняет свежесть весь день.</p>
+            <span class="chip"><svg viewBox="0 0 256 256"><use href="#wipes"/></svg><span lang="kk">Дымқыл майлықтар жинақта</span><span lang="ru">Влажные салфетки в комплекте</span></span>
+            <span class="ean">EAN 4870272150033</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="adv">
+    <div class="wrap">
+      <div class="eyebrow"><span lang="kk">Артықшылықтар</span><span lang="ru">Преимущества</span></div>
+      <h2 class="h2"><span lang="kk">Неге Miss</span><span lang="ru">Почему Miss</span></h2>
+      <div class="grid">
+        <div class="item">
+          <div class="ico"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM187.83,184H68.17a72,72,0,0,1-8-16H195.87A72,72,0,0,1,187.83,184ZM200,144a70.57,70.57,0,0,1-.46,8H56.46a70.57,70.57,0,0,1-.46-8q0-4,.36-8H199.64Q200,140,200,144ZM128,26c14.16,11.1,56.86,47.74,68.84,94H59.16C71.14,73.76,113.84,37.12,128,26ZM82.81,200h90.38a71.82,71.82,0,0,1-90.38,0Z"/></svg></div>
+          <h3><span lang="kk">Жылдам сіңіру және сенімді қорғау</span><span lang="ru">Мгновенное впитывание и надёжная защита</span></h3>
+          <p lang="kk">Сұйықтықты тез сіңіріп, ішінде сенімді сақтайды. Көлемді құрылымы ағып кетудің алдын алып, құрғақтық пен жайлылық береді.</p>
+          <p lang="ru">Быстро впитывает большой объём жидкости и надёжно удерживает её внутри. Объёмная структура предотвращает протекание и дарит ощущение сухости и комфорта.</p>
+        </div>
+        <div class="item">
+          <div class="ico"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M221.28,34.75a64,64,0,0,0-90.49,0L60.69,104A15.9,15.9,0,0,0,56,115.31v73.38L26.34,218.34a8,8,0,0,0,11.32,11.32L67.32,200H140.7A15.92,15.92,0,0,0,152,195.32l0,0,69.23-70A64,64,0,0,0,221.28,34.75ZM142.07,46.06A48,48,0,0,1,211.79,112H155.33l34.35-34.34a8,8,0,0,0-11.32-11.32L120,124.69V67.87ZM72,115.35l32-31.67v57l-32,32ZM140.7,184H83.32l56-56h56.74Z"/></svg></div>
+          <h3><span lang="kk">Жұмсақ беті</span><span lang="ru">Мягкая поверхность</span></h3>
+          <p lang="kk">Жұмсақ материалы теріге нәзік тиіп, тітіркендірмейді және күні бойы жайлылық сыйлайды.</p>
+          <p lang="ru">Мягкий материал бережно соприкасается с кожей, не вызывает раздражения и обеспечивает комфорт в течение всего дня.</p>
+        </div>
+        <div class="item">
+          <div class="ico"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M184,184a32,32,0,0,1-32,32c-13.7,0-26.95-8.93-31.5-21.22a8,8,0,0,1,15-5.56C137.74,195.27,145,200,152,200a16,16,0,0,0,0-32H40a8,8,0,0,1,0-16H152A32,32,0,0,1,184,184Zm-64-80a32,32,0,0,0,0-64c-13.7,0-26.95,8.93-31.5,21.22a8,8,0,0,0,15,5.56C105.74,60.73,113,56,120,56a16,16,0,0,1,0,32H24a8,8,0,0,0,0,16Zm88-32c-13.7,0-26.95,8.93-31.5,21.22a8,8,0,0,0,15,5.56C193.74,92.73,201,88,208,88a16,16,0,0,1,0,32H32a8,8,0,0,0,0,16H208a32,32,0,0,0,0-64Z"/></svg></div>
+          <h3><span lang="kk">Ауа өткізгіштік</span><span lang="ru">Воздухопроницаемость</span></h3>
+          <p lang="kk">Тыныс алатын төменгі қабаты ылғалдылық пен жағымсыз иісті азайтып, ұзақ уақыт сергектік пен жайлылық береді.</p>
+          <p lang="ru">Дышащий нижний слой уменьшает ощущение влажности и появление запаха, сохраняя свежесть и комфорт даже при длительном использовании.</p>
+        </div>
+        <div class="item">
+          <div class="ico"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#atom"/></svg></div>
+          <h3><span lang="kk">4-і 1-де функционалды ендірме</span><span lang="ru">Функциональная вставка 4 в 1</span></h3>
+          <p lang="kk">Құрамында: алыс инфрақызыл сәулелер, күміс иондары (Ag+), теріс иондар, биомагниттік компоненттер. Тазалық пен сергектік сезімін сақтауға көмектеседі.</p>
+          <p lang="ru">Содержит: дальнее инфракрасное излучение, ионы серебра (Ag+), отрицательные ионы, биомагнитные компоненты. Помогает сохранять ощущение чистоты и свежести.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inside">
+    <div class="wrap">
+      <div class="eyebrow"><span lang="kk">Құрамы</span><span lang="ru">Состав</span></div>
+      <h2 class="h2"><span lang="kk">Ішінде не бар</span><span lang="ru">Что внутри</span></h2>
+      <div class="cols">
+        <div class="panel">
+          <h3><span lang="kk">Күндізгі және түнгі</span><span lang="ru">Дневные и ночные</span></h3>
+          <div class="sub"><span lang="kk">Негізгі материалдары</span><span lang="ru">Основные материалы</span></div>
+          <ul>
+            <li><span class="n"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#check"/></svg></span><span><span lang="kk">Тағамдық санаттағы күміс қабықша</span><span lang="ru">Плёнка с серебряным покрытием пищевого класса</span></span></li>
+            <li><span class="n"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#check"/></svg></span><span><span lang="kk">Импортталған 3D тесікті тоқылмаған мата</span><span lang="ru">Импортный нетканый материал с 3D-перфорацией</span></span></li>
+            <li><span class="n"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#check"/></svg></span><span><span lang="kk">Күміс иондары мен теріс иондары бар 4-і 1-де функционалды ендірме</span><span lang="ru">Функциональная вставка 4 в 1 с ионами серебра и отрицательными ионами</span></span></li>
+            <li><span class="n"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#check"/></svg></span><span><span lang="kk">Жоғары сіңіргіш полимер</span><span lang="ru">Суперабсорбент</span></span></li>
+            <li><span class="n"><svg viewBox="0 0 256 256" fill="currentColor"><use href="#check"/></svg></span><span><span lang="kk">PE ауа өткізгіш төменгі қабықша</span><span lang="ru">Воздухопроницаемая нижняя плёнка PE</span></span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3><span lang="kk">Күнделікті</span><span lang="ru">Ежедневные</span></h3>
+          <div class="sub"><span lang="kk">5 қабат, қалыңдығы 1 мм</span><span lang="ru">5 слоёв, толщина 1 мм</span></div>
+          <ol>
+            <li><span class="n">1</span><span><span lang="kk">Жұмсақ тоқылмаған мата, сезімтал теріні қорғайды</span><span lang="ru">Мягкое нетканое полотно, бережёт чувствительную кожу</span></span></li>
+            <li><span class="n">2</span><span><span lang="kk">Иісті кетіретін арнайы материал</span><span lang="ru">Специальный материал против запаха</span></span></li>
+            <li><span class="n">3</span><span><span lang="kk">Кері ағудан қорғайтын орталық сіңіргіш қабат</span><span lang="ru">Центральный впитывающий слой, препятствует обратному протеканию</span></span></li>
+            <li><span class="n">4</span><span><span lang="kk">Табиғи целлюлоза (wood pulp), ауамен қалыптау қағазы</span><span lang="ru">Натуральная целлюлоза (wood pulp), бумага воздушной укладки</span></span></li>
+            <li><span class="n">5</span><span><span lang="kk">Ауа өткізетін және ылғалды ұстайтын экоүлдір</span><span lang="ru">Дышащая экоплёнка, контролирует влагу</span></span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="band">
+        <img class="day" src="img/hero-day.jpg" width="1282" height="475" alt="">
+        <img class="night" src="img/hero-night.jpg" width="1282" height="478" alt="">
+        <div class="in">
+          <h2><span lang="kk">Күндіз де, түнде де</span><span lang="ru">Днём и ночью</span></h2>
+          <p lang="kk">Күндізгі төсемдердің қаптамасы: күн батқан теңіз. Түнгісі: жұлдызды аспан. Сөреде бірден танылады.</p>
+          <p lang="ru">Дневные в коробке с закатом над морем, ночные со звёздным небом. На полке узнаются сразу.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="soap" class="soap">
+    <div class="wrap">
+      <div class="eyebrow"><span lang="kk">Сабын</span><span lang="ru">Мыло</span></div>
+      <h2 class="h2"><span lang="kk">Miss гүл хош иісті сабыны</span><span lang="ru">Цветочное мыло Miss</span></h2>
+      <p class="lead" lang="kk">Премиум хош иісті сабын, 250 г. Табиғи экстракттардан жасалған хош иіс. Төрт түс, төрт көңіл күй.</p>
+      <p class="lead" lang="ru">Премиум парфюмированное мыло, 250 г. Композиция из натуральных экстрактов. Четыре цвета, четыре настроения.</p>
+      <div class="soaps">
+        <article class="soapc">
+          <img src="img/soap-blue.jpg" width="1032" height="451" alt="Мыло Miss синее">
+          <div class="b"><h3><span lang="kk">Көк</span><span lang="ru">Синее</span></h3><div class="ean">EAN 4870272150101</div></div>
+        </article>
+        <article class="soapc">
+          <img src="img/soap-peach.jpg" width="1032" height="451" alt="Мыло Miss персиковое">
+          <div class="b"><h3><span lang="kk">Шабдалы</span><span lang="ru">Персиковое</span></h3><div class="ean">EAN 4870272150095</div></div>
+        </article>
+        <article class="soapc">
+          <img src="img/soap-purple.jpg" width="1032" height="451" alt="Мыло Miss фиолетовое">
+          <div class="b"><h3><span lang="kk">Күлгін</span><span lang="ru">Фиолетовое</span></h3><div class="ean">EAN 4870272150088</div></div>
+        </article>
+        <article class="soapc">
+          <img src="img/soap-beige.jpg" width="1032" height="451" alt="Мыло Miss бежевое">
+          <div class="b"><h3><span lang="kk">Беж</span><span lang="ru">Бежевое</span></h3><div class="ean">EAN 4870272150071</div></div>
+        </article>
+      </div>
+      <div class="soapnote">
+        <div lang="kk"><b>Қолдану тәсілі.</b> Сабынды сулап, қолмен мол көбіктендіріңіз, көбікпен теріні 1–3 минут нәзік массаждаңыз, таза сумен шайыңыз.</div>
+        <div lang="ru"><b>Способ применения.</b> Смочите мыло, вспеньте в руках, мягко помассируйте пеной кожу 1–3 минуты и смойте чистой водой.</div>
+        <div lang="kk"><b>Сақтық шаралары.</b> Сезімтал теріге алдымен шағын аймақта сынап көріңіз. Тек сыртқы қолдану үшін. Жарамдылық мерзімі 3 жыл.</div>
+        <div lang="ru"><b>Меры предосторожности.</b> При чувствительной коже сначала проверьте на небольшом участке. Только для наружного применения. Срок годности 3 года.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="eyebrow"><span lang="kk">Байланыс</span><span lang="ru">Контакты</span></div>
+      <h2 class="h2"><span lang="kk">Тапсырыс беру</span><span lang="ru">Сделать заказ</span></h2>
+      <div class="box">
+        <div>
+          <p class="lead" lang="kk">Көтерме және бөлшек тапсырыстар, дүкендер мен дистрибьюторлар үшін: бізге поштаға жазыңыз, прайс пен шарттарды жібереміз.</p>
+          <p class="lead" lang="ru">Оптовые и розничные заказы, магазины и дистрибьюторы: напишите нам на почту, отправим прайс и условия.</p>
+          <div class="mail">
+            <code id="mail">Alsem.kz@mail.ru</code>
+            <button class="copy" type="button" id="copy-mail"><span lang="kk">Көшіру</span><span lang="ru">Скопировать</span></button>
+          </div>
+        </div>
+        <div class="addr">
+          <div class="row"><b><span lang="kk">Компания</span><span lang="ru">Компания</span></b><span><span lang="kk">«Alsem KZ» ЖШС, БСН 240740004393</span><span lang="ru">ТОО «Alsem KZ», БИН 240740004393</span></span></div>
+          <div class="row"><b><span lang="kk">Мекенжайы</span><span lang="ru">Адрес</span></b><span><span lang="kk">Қазақстан, 050011, Алматы қ., Түрксіб ауданы, Пугачев көшесі, 8/1 ғимарат</span><span lang="ru">Казахстан, 050011, г. Алматы, Турксибский район, ул. Пугачёва, здание 8/1</span></span></div>
+          <div class="row"><b>E-mail</b><span>Alsem.kz@mail.ru</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Miss"><svg viewBox="0 0 114.29 78.73" aria-hidden="true"><use href="#logo-miss"/></svg></a>
+    <p lang="kk">Төсемдерді өндіруші: Foshan Yunduo Sanitary Products Co., Ltd., Қытай. Сабынды өндіруші: Guangzhou Zefen Industrial Co., Ltd., Қытай. Тапсырыс беруші: «Alsem KZ» ЖШС, Алматы. Жарамдылық мерзімі 3 жыл; өндірілген күні қаптамада көрсетілген. Құрғақ, салқын жерде сақтаңыз.</p>
+    <p lang="ru">Изготовитель прокладок: Foshan Yunduo Sanitary Products Co., Ltd., Китай. Изготовитель мыла: Guangzhou Zefen Industrial Co., Ltd., Китай. Заказчик: ТОО «Alsem KZ», Алматы. Срок годности 3 года; дата производства указана на упаковке. Хранить в сухом прохладном месте.</p>
+    <p>© 2026 Alsem KZ · Miss</p>
+  </div>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-miss" viewBox="0 0 114.29 78.73"><path fill-rule="evenodd" d="M91.97 21.33 C91.63 21.23 90.94 20.69 90.50 20.46 C90.01 20.20 89.52 19.92 88.92 19.72 C87.67 19.29 86.31 19.11 84.91 19.50 C83.81 19.80 82.71 20.58 81.88 21.11 C81.41 21.40 80.94 21.69 80.41 21.96 C80.03 22.16 79.15 22.50 78.88 22.75 C78.83 23.59 80.25 25.98 80.65 26.51 C81.45 27.56 82.30 28.45 83.48 29.21 C87.61 31.84 91.76 31.17 92.30 31.43 L90.24 33.01 C89.74 33.42 88.67 34.57 88.71 35.13 C89.17 35.45 89.83 34.85 90.59 34.45 C93.17 33.09 93.48 33.01 96.43 32.01 C97.73 31.57 99.45 31.14 100.85 30.91 C101.48 30.81 101.46 30.78 102.06 30.96 C102.93 31.22 103.49 31.24 104.20 30.70 C104.59 30.39 104.61 30.34 104.61 29.68 C107.13 29.81 107.76 30.04 110.45 29.35 C111.75 29.03 113.10 28.30 114.07 27.40 C114.29 27.19 114.28 27.11 114.28 26.72 C114.06 26.75 112.82 27.65 112.37 27.91 C111.79 28.25 110.31 28.88 109.64 29.03 C109.44 29.07 109.21 29.14 109.00 29.18 C107.47 29.52 106.25 29.56 104.63 29.52 C104.29 29.05 104.16 28.51 103.31 28.51 C102.59 28.52 102.01 28.83 101.35 28.89 L104.79 26.11 C106.65 24.50 108.36 22.68 109.72 20.54 C110.73 18.95 111.89 17.03 112.52 14.95 C113.31 12.38 113.72 10.46 113.13 7.64 C112.74 7.64 111.73 8.36 111.40 8.56 C110.85 8.89 110.37 9.21 109.73 9.49 C109.27 9.68 106.12 10.81 105.79 10.75 C105.48 7.54 104.18 3.19 102.61 0.71 C102.38 0.34 102.24 0.00 101.76 0.34 C101.45 0.56 101.54 0.73 101.28 1.34 C100.60 2.92 99.37 4.73 98.29 5.75 C96.34 7.61 93.63 8.93 92.24 11.49 C91.39 13.06 91.12 14.12 91.12 16.24 C91.12 17.15 91.24 18.05 91.42 18.90 C91.53 19.39 91.96 21.02 91.97 21.33 M101.41 26.92 C102.09 26.57 104.59 24.28 105.08 23.78 C105.74 23.12 106.11 22.77 106.74 22.04 C109.37 18.99 111.82 14.87 111.95 10.10 C111.82 10.10 109.98 10.97 109.62 11.10 C108.75 11.42 107.85 11.62 106.95 11.89 C105.66 12.28 105.90 12.26 105.81 14.17 C105.75 15.21 105.68 16.28 105.49 17.30 C104.47 22.98 101.52 26.46 101.41 26.92 M96.00 27.08 C95.43 27.07 95.02 26.44 94.70 26.13 L93.22 24.55 C93.05 24.39 92.99 24.29 92.85 24.13 L92.07 23.38 C91.03 22.56 90.94 22.32 89.34 21.53 C86.49 20.13 85.00 20.90 82.61 22.47 C82.11 22.80 81.21 23.37 80.60 23.57 C80.72 24.27 82.50 26.45 83.02 26.95 C85.99 29.81 90.41 30.16 94.44 29.87 C95.27 29.77 96.11 29.65 96.95 29.59 C97.16 29.57 97.47 29.62 97.90 29.19 C98.12 28.96 99.39 27.08 99.71 26.65 C102.43 23.00 104.31 18.78 104.29 13.77 C104.28 11.84 104.14 9.86 103.71 8.05 C103.43 6.89 102.64 4.04 102.07 3.32 L101.20 4.72 C100.70 5.45 99.71 6.59 99.04 7.14 L97.15 8.70 C96.93 8.87 96.73 9.02 96.51 9.20 C95.20 10.26 94.10 11.06 93.27 12.91 C92.21 15.26 92.65 18.39 93.50 20.67 C93.92 21.78 94.41 22.83 94.93 23.83 C95.20 24.35 95.44 24.85 95.71 25.36 C96.05 26.02 96.32 26.58 96.00 27.08Z"/><path fill-rule="evenodd" d="M104.79 28.82 L104.86 28.85 C105.05 28.88 106.01 28.55 106.23 28.49 C108.70 27.72 111.51 26.12 112.85 23.86 C113.03 23.56 113.38 22.81 113.14 22.50 C112.94 22.51 112.96 22.51 112.85 22.68 L111.45 24.48 C110.43 25.71 108.82 26.96 107.32 27.66 L104.79 28.82Z"/><path fill-rule="evenodd" d="M101.12 54.50 C101.07 54.28 100.73 54.27 100.51 54.22 C100.26 54.17 100.00 54.10 99.76 54.04 C98.47 53.77 96.31 53.48 94.99 53.31 C94.72 53.28 94.42 53.27 94.16 53.24 C92.46 52.99 89.96 52.81 88.27 52.72 C84.06 52.48 78.16 52.30 74.00 52.56 C71.69 52.71 69.39 52.78 67.12 53.00 C65.99 53.11 64.89 53.17 63.78 53.31 C60.48 53.72 57.40 54.06 54.12 54.63 C53.07 54.81 52.04 55.05 51.02 55.21 C48.21 55.66 46.15 56.12 43.44 56.77 C41.43 57.25 39.63 57.72 37.62 58.27 C35.29 58.92 32.89 59.66 30.60 60.42 C28.79 61.04 27.00 61.71 25.18 62.36 C21.63 63.64 17.04 65.68 13.72 67.35 L11.33 68.60 C10.92 68.82 10.56 69.05 10.15 69.28 C9.76 69.50 9.39 69.73 9.00 69.95 C8.05 70.49 6.41 71.49 5.83 72.31 C5.44 72.86 5.82 73.24 6.44 73.16 C7.00 73.10 9.50 71.62 10.07 71.32 C11.82 70.39 13.07 69.70 14.90 68.82 L17.35 67.64 C19.64 66.54 22.66 65.31 25.04 64.33 C26.43 63.76 28.94 62.89 30.41 62.39 C31.33 62.08 32.18 61.76 33.10 61.44 C34.84 60.84 39.87 59.38 41.63 58.98 C42.64 58.75 43.61 58.45 44.56 58.24 C46.68 57.77 48.42 57.34 50.59 56.93 C51.62 56.74 52.62 56.52 53.65 56.32 C57.69 55.53 62.30 54.95 66.41 54.45 C68.42 54.20 71.15 53.97 73.19 53.88 C74.32 53.82 75.49 53.76 76.63 53.68 C77.80 53.59 79.02 53.60 80.19 53.56 C81.76 53.50 85.99 53.42 87.43 53.52 C88.59 53.61 89.79 53.56 90.95 53.64 C91.54 53.67 92.09 53.69 92.68 53.73 C94.97 53.87 97.21 54.08 99.48 54.29 C99.86 54.32 100.82 54.54 101.12 54.50Z"/><path fill-rule="evenodd" d="M27.30 36.85 L27.38 36.29 C27.43 35.88 27.75 35.10 27.88 34.73 L27.93 35.46 C27.96 34.94 27.85 34.89 28.03 34.37 C28.14 34.05 28.23 33.76 28.33 33.44 C28.43 33.12 28.52 32.81 28.63 32.50 C28.73 32.18 28.80 31.83 28.90 31.52 C29.10 30.89 29.29 30.28 29.47 29.63 C29.66 28.98 29.81 28.33 30.00 27.67 C30.37 26.39 30.66 24.96 30.87 23.59 C30.98 22.88 31.09 22.15 31.17 21.42 C31.20 21.07 31.20 20.60 31.28 20.32 C31.42 19.81 31.23 18.54 31.18 17.99 C31.14 17.60 31.18 17.19 31.15 16.79 C31.03 15.36 30.53 14.42 29.20 13.79 C27.37 12.93 24.71 13.40 22.94 14.06 C21.77 14.50 20.56 15.02 19.46 15.57 C19.11 15.75 18.71 15.97 18.28 16.22 L18.28 16.22 C17.92 16.43 17.54 16.67 17.15 16.92 C15.60 17.84 14.12 18.67 11.38 21.30 C9.60 22.98 8.58 23.94 6.93 25.81 C6.45 26.34 5.96 26.85 5.48 27.43 C4.50 28.59 3.73 29.77 2.83 31.14 C1.69 32.88 0.00 36.01 1.46 38.09 C1.65 38.37 1.97 38.65 2.31 38.81 C2.58 38.94 3.36 39.22 3.61 39.20 C3.84 39.18 4.37 38.83 4.18 38.36 C4.08 38.12 3.29 37.96 3.02 37.85 C2.27 37.54 2.11 36.54 2.26 35.77 C2.57 34.17 3.76 32.39 4.53 31.24 C5.23 30.21 6.52 28.60 7.30 27.74 C8.29 26.67 9.28 25.69 10.26 24.69 C10.82 24.13 11.89 23.06 12.55 22.59 L14.12 21.25 C14.62 20.81 15.84 19.84 16.85 19.07 L17.20 18.82 C17.44 18.66 17.72 18.51 17.96 18.35 C18.21 18.19 18.48 18.03 18.74 17.87 C19.33 17.51 20.47 16.88 21.14 16.58 C21.43 16.45 21.72 16.33 22.01 16.19 C22.28 16.06 22.58 15.94 22.87 15.82 C23.18 15.69 23.47 15.61 23.78 15.51 C24.11 15.39 24.38 15.31 24.73 15.23 C25.08 15.15 25.41 15.03 25.74 14.98 C26.46 14.85 27.36 14.88 28.09 14.95 C28.69 15.00 29.24 15.61 29.39 16.13 C29.74 17.29 28.22 20.55 27.64 21.72 C27.36 22.28 27.11 22.85 26.83 23.40 C26.55 23.95 26.34 24.55 26.04 25.06 C25.88 25.32 25.75 25.59 25.60 25.85 L23.36 29.85 C23.06 30.38 22.74 30.87 22.44 31.40 C21.55 32.99 20.57 34.48 19.64 36.03 C19.34 36.54 19.03 37.05 18.71 37.56 C18.54 37.83 18.38 38.04 18.23 38.30 C18.06 38.57 17.91 38.82 17.74 39.08 C17.08 40.07 16.50 41.14 15.83 42.11 C15.49 42.61 15.20 43.07 14.86 43.60 C14.70 43.86 14.57 44.12 14.40 44.37 C14.23 44.63 14.06 44.86 13.89 45.12 L12.90 46.59 C12.75 46.84 12.61 47.09 12.44 47.36 C12.28 47.61 12.11 47.87 11.94 48.12 C11.62 48.61 11.26 49.10 10.92 49.55 C10.55 50.04 10.29 50.55 9.93 51.05 L8.40 53.24 C8.22 53.49 8.05 53.72 7.88 53.98 C7.41 54.70 6.84 55.33 6.32 56.11 C5.83 56.85 5.25 57.53 4.72 58.23 C4.62 58.36 4.53 58.43 4.44 58.55 L3.60 59.60 C3.34 59.92 2.50 60.64 2.56 61.01 C2.59 61.20 2.70 61.26 2.81 61.37 C2.97 61.52 2.97 61.56 3.26 61.48 C3.75 61.36 4.09 61.11 4.46 60.82 C4.81 60.54 5.07 60.23 5.42 59.93 C5.62 59.75 6.37 58.86 6.58 58.60 C6.96 58.14 7.37 57.77 7.71 57.27 C8.04 56.79 8.41 56.33 8.78 55.85 L9.81 54.42 C10.52 53.40 11.78 51.81 12.36 50.79 C12.50 50.53 12.72 50.32 12.88 50.06 C13.19 49.57 13.57 49.10 13.89 48.57 C14.20 48.05 14.55 47.59 14.88 47.08 L15.37 46.34 C15.83 45.64 16.33 44.71 16.85 44.10 C17.37 43.49 17.83 42.51 18.25 41.82 L19.71 39.55 C20.35 38.55 20.96 37.48 21.61 36.47 C21.77 36.22 21.92 35.96 22.06 35.70 C22.23 35.41 22.37 35.21 22.55 34.92 C22.89 34.34 23.31 33.57 23.69 33.01 L24.40 31.83 C24.95 30.76 25.67 29.77 26.21 28.69 C26.48 28.14 26.74 27.60 27.04 27.06 C27.32 26.53 27.64 26.02 27.92 25.45 C28.19 24.89 28.49 24.37 28.74 23.78 C28.85 23.51 29.37 22.32 29.55 22.11 C29.66 22.41 28.37 27.71 28.18 28.40 C27.62 30.42 26.94 32.34 26.36 34.35 C26.06 35.36 25.69 36.28 25.38 37.26 C25.22 37.77 25.05 38.22 24.89 38.68 C24.37 40.14 23.90 41.57 23.38 43.02 C23.14 43.66 22.12 46.21 22.35 46.77 C22.70 47.62 23.69 47.54 24.10 46.80 C24.57 45.96 24.94 45.03 25.36 44.18 C25.59 43.71 25.79 43.34 26.01 42.90 C26.23 42.46 26.41 41.99 26.62 41.56 C26.83 41.14 27.07 40.73 27.29 40.29 C27.48 39.89 27.75 39.40 27.97 39.02 C28.21 38.61 28.40 38.19 28.63 37.76 C29.32 36.50 30.08 35.30 30.77 34.05 C31.59 32.58 32.48 31.28 33.39 29.89 C33.47 29.76 33.52 29.74 33.60 29.60 L34.59 28.17 C35.14 27.38 35.55 26.65 36.19 25.88 C36.47 25.54 36.74 25.13 37.02 24.76 C37.09 24.66 37.13 24.60 37.21 24.49 C37.29 24.36 37.35 24.31 37.43 24.21 C37.58 24.01 37.71 23.87 37.87 23.68 C38.17 23.32 38.43 22.96 38.75 22.60 L40.29 20.76 C40.37 20.67 40.46 20.60 40.54 20.51 C41.12 19.88 41.82 19.06 42.44 18.53 C42.77 18.25 43.12 17.83 43.43 17.59 C43.97 17.16 44.34 16.77 45.02 16.25 C46.02 15.48 46.82 14.91 48.05 14.43 C48.27 14.35 48.57 14.27 48.84 14.26 C49.28 14.24 49.28 14.46 49.24 14.87 C49.15 15.82 48.63 17.04 48.32 17.83 C47.94 18.78 47.50 19.60 47.11 20.51 C46.55 21.83 45.88 23.16 45.27 24.48 C45.07 24.92 44.87 25.37 44.65 25.82 C44.45 26.25 44.29 26.73 44.09 27.18 C43.51 28.51 42.84 29.92 42.32 31.25 C41.56 33.17 40.83 34.92 40.16 36.86 C39.83 37.82 39.53 38.80 39.21 39.76 C38.54 41.74 37.93 43.75 37.50 45.83 C37.28 46.92 37.01 47.94 36.87 49.07 C36.75 49.98 36.53 51.83 36.63 52.72 C36.67 53.09 36.90 53.89 37.33 53.93 C37.65 53.97 37.84 53.78 37.96 53.62 C38.16 53.38 38.02 53.07 37.98 52.79 C37.83 51.42 38.79 47.62 39.13 46.16 C39.60 44.15 40.26 42.10 40.92 40.18 C41.25 39.19 41.63 38.30 41.96 37.34 C42.31 36.34 42.71 35.52 43.08 34.57 C43.27 34.10 43.41 33.63 43.61 33.18 L44.74 30.42 C44.91 29.95 45.13 29.52 45.32 29.04 C45.69 28.12 46.10 27.23 46.49 26.33 C46.68 25.90 46.91 25.45 47.11 25.03 C47.32 24.59 47.52 24.12 47.73 23.68 C48.16 22.80 48.49 21.89 48.93 21.00 C49.04 20.79 49.12 20.54 49.22 20.33 C49.55 19.66 49.78 18.93 50.07 18.26 C50.71 16.78 51.98 13.38 49.69 12.73 C49.13 12.57 48.48 12.68 47.94 12.81 C47.00 13.02 46.09 13.56 45.31 14.06 C44.87 14.34 44.57 14.57 44.16 14.86 C42.88 15.77 42.59 16.15 41.52 17.08 C40.44 18.01 38.63 20.02 37.78 21.10 C37.35 21.65 36.88 22.14 36.44 22.68 C35.30 24.08 33.53 26.64 32.37 28.31 C31.57 29.46 30.83 30.68 30.12 31.90 C29.53 32.91 28.89 33.92 28.34 34.97 C28.24 35.17 28.13 35.44 28.01 35.60 C27.92 35.73 27.90 35.73 27.83 35.89 L27.45 36.51 C27.37 36.64 27.37 36.73 27.30 36.85Z"/><path fill-rule="evenodd" d="M84.45 37.18 L80.41 39.53 C80.11 39.71 79.79 40.01 79.45 40.10 C79.17 39.87 78.07 38.42 77.90 38.07 C77.48 37.22 77.89 36.01 78.46 35.35 C79.01 34.71 79.74 34.19 80.45 33.73 C81.21 33.23 82.19 33.00 83.17 32.83 C83.31 32.94 83.22 33.01 83.50 32.99 C83.83 32.95 84.21 32.55 84.17 32.17 C84.12 31.65 83.54 31.38 82.97 31.34 C81.93 31.27 80.55 31.80 79.77 32.18 C78.99 32.56 78.30 33.03 77.71 33.61 L77.21 34.14 C77.10 34.27 77.11 34.30 77.01 34.44 C76.92 34.56 76.84 34.58 76.77 34.69 C76.63 34.89 76.73 34.82 76.51 34.96 L75.09 35.57 C74.59 35.74 74.16 35.96 73.69 36.17 C71.85 36.98 70.07 37.88 68.31 38.85 C67.86 39.11 67.48 39.36 67.05 39.61 L65.14 40.73 C65.03 40.79 64.91 40.82 64.80 40.89 C64.67 40.97 64.61 41.04 64.47 41.10 C63.99 40.46 63.41 39.84 63.04 39.11 C62.81 38.64 62.73 38.30 62.89 37.71 C62.97 37.38 63.29 36.79 63.47 36.57 C63.85 36.10 63.88 36.10 64.31 35.71 C64.62 35.44 64.92 35.22 65.31 34.99 C65.88 34.64 67.04 34.08 67.90 34.10 C68.21 34.11 68.30 34.27 68.65 34.18 C68.85 34.12 69.01 33.93 69.09 33.75 C69.29 33.25 69.01 32.77 68.62 32.64 C68.10 32.47 67.66 32.43 67.09 32.55 C66.65 32.64 66.10 32.76 65.72 32.91 C64.50 33.39 63.94 33.80 63.00 34.47 C62.88 34.56 62.68 34.77 62.56 34.89 C62.14 35.33 61.72 35.78 61.46 36.35 C61.41 36.45 61.38 36.52 61.34 36.66 C61.19 37.15 58.99 38.71 58.39 39.29 C58.24 39.44 58.09 39.53 57.94 39.67 C57.48 40.08 56.96 40.43 56.49 40.81 L52.58 43.77 C51.95 44.23 51.18 44.68 50.43 45.08 C48.38 46.17 46.49 46.78 47.79 43.40 C48.35 41.94 49.33 40.21 50.13 38.90 C50.24 38.72 50.35 38.59 50.46 38.40 C50.73 37.92 51.11 37.22 51.46 36.81 C51.69 36.56 51.97 35.95 51.76 35.59 C51.52 35.18 51.13 35.02 50.57 35.26 C49.95 35.54 49.74 36.10 49.36 36.60 C49.29 36.69 49.25 36.72 49.17 36.84 C49.11 36.93 49.06 37.02 49.00 37.10 C48.77 37.46 48.59 37.84 48.36 38.19 C48.14 38.55 47.95 38.93 47.73 39.28 C46.89 40.63 46.07 42.54 45.74 44.17 C45.64 44.64 45.64 45.22 45.75 45.69 C45.87 46.17 46.08 46.48 46.39 46.78 C47.01 47.40 48.25 47.38 49.17 47.14 C50.39 46.82 51.54 46.02 52.57 45.39 C52.95 45.16 53.26 44.93 53.61 44.70 C54.30 44.26 54.93 43.75 55.56 43.23 L56.51 42.45 C56.85 42.20 57.04 42.01 57.47 41.69 C57.87 41.41 59.78 39.74 60.26 39.33 C60.50 39.12 60.92 38.65 61.15 38.51 C61.29 39.28 61.43 39.83 61.91 40.45 C62.09 40.69 62.28 40.98 62.43 41.25 C62.55 41.45 62.88 41.98 62.92 42.13 C62.77 42.37 62.40 42.63 62.16 42.79 C62.05 42.87 61.95 42.93 61.86 42.99 C61.50 43.26 61.15 43.60 60.79 43.88 L60.26 44.31 C60.17 44.38 60.11 44.46 60.02 44.54 L59.22 45.20 C59.11 45.30 59.05 45.35 58.95 45.43 C58.39 45.94 57.33 47.08 57.07 47.92 C56.67 49.19 57.30 50.05 58.45 50.17 C59.04 50.24 59.62 50.12 60.17 50.00 C60.45 49.95 61.27 49.58 61.58 49.45 C61.94 49.30 62.51 48.96 62.79 48.74 C62.89 48.66 62.94 48.60 63.04 48.52 C63.34 48.31 63.61 48.09 63.85 47.84 C63.94 47.75 64.00 47.70 64.09 47.61 C64.39 47.34 64.52 47.17 64.75 46.82 C65.31 45.94 65.68 44.92 65.63 43.82 C65.61 43.46 65.52 42.93 65.41 42.58 C65.37 42.45 65.33 42.39 65.23 42.31 L65.21 42.29 C65.31 42.22 65.40 42.18 65.52 42.10 C65.63 42.03 65.72 41.96 65.84 41.89 C66.47 41.46 67.07 41.03 67.74 40.63 C70.17 39.18 72.67 37.76 75.28 36.63 C75.52 36.52 75.77 36.34 76.01 36.26 C75.97 36.72 75.95 36.41 75.98 37.08 C76.05 38.63 76.60 38.96 77.27 40.03 C77.42 40.27 77.92 40.86 77.97 41.06 C77.75 41.34 76.69 42.12 76.34 42.40 C75.98 42.69 75.57 42.96 75.24 43.29 C74.77 43.78 74.14 44.23 73.68 44.72 C73.49 44.91 73.37 45.03 73.20 45.20 C72.79 45.61 72.19 46.39 71.94 46.93 C71.73 47.37 71.63 48.13 71.89 48.60 C72.16 49.08 72.45 49.21 73.14 49.33 C74.21 49.51 75.55 49.09 76.38 48.68 C76.82 48.47 77.27 48.24 77.65 47.96 C78.72 47.17 80.01 46.03 80.35 44.69 C80.92 42.49 80.15 41.94 80.18 41.26 C80.51 41.09 80.89 40.75 81.30 40.52 C81.54 40.39 81.66 40.29 81.86 40.15 C82.79 39.48 83.79 38.90 84.78 38.33 C84.92 38.25 85.08 38.15 85.28 38.04 C85.31 38.03 86.11 37.53 85.91 37.14 C85.71 36.75 85.17 36.76 84.45 37.18 L84.45 37.18 M58.35 48.75 C58.67 48.84 59.30 48.74 59.59 48.66 C59.96 48.55 60.20 48.39 60.53 48.24 C60.94 48.04 61.40 47.72 61.75 47.43 C62.25 47.00 62.15 47.24 62.77 46.39 C63.05 46.01 63.03 46.14 63.33 45.59 C63.49 45.29 63.68 44.99 63.73 44.62 C63.77 44.27 63.83 43.70 63.71 43.40 C63.40 43.41 62.41 44.34 62.15 44.51 C61.91 44.66 61.61 44.90 61.40 45.09 C60.95 45.46 60.72 45.64 60.32 46.03 C60.19 46.15 60.11 46.24 59.97 46.35 C59.90 46.42 59.88 46.45 59.81 46.52 C59.62 46.72 59.69 46.51 59.48 46.86 C59.44 46.94 59.38 47.00 59.32 47.06 C59.20 47.17 59.12 47.28 59.01 47.42 C58.76 47.73 58.25 48.28 58.35 48.75 M73.16 47.95 C73.70 48.15 74.87 47.72 75.38 47.39 C76.04 46.97 76.45 46.78 77.08 46.23 C77.51 45.86 78.07 45.21 78.35 44.64 C78.45 44.42 78.72 43.85 78.75 43.61 C78.80 43.28 78.76 42.59 78.59 42.37 C78.32 42.45 77.37 43.31 77.04 43.56 L76.27 44.16 C75.92 44.43 75.20 45.17 74.84 45.48 L73.83 46.56 C73.57 46.90 73.10 47.48 73.16 47.95Z"/><path fill-rule="evenodd" d="M52.20 31.93 C52.29 31.95 52.14 31.99 52.22 31.91 C52.26 31.88 52.23 31.89 52.30 31.86 C52.34 32.94 53.56 32.65 54.15 31.86 C54.20 31.80 54.25 31.69 54.31 31.62 C54.73 31.08 55.47 30.52 55.33 29.83 C55.15 28.89 54.01 28.98 53.33 29.78 C53.19 29.95 52.72 30.54 52.64 30.71 C52.50 30.98 52.20 31.58 52.20 31.93Z"/><path d="M30.07 76.90 C29.82 77.28 29.41 77.63 28.83 77.94 C28.24 78.23 27.70 78.38 27.16 78.38 C26.41 78.38 26.04 78.00 26.04 77.24 C26.04 76.53 26.27 75.63 26.72 74.54 C27.25 73.31 27.89 72.22 28.70 71.50 C29.12 71.15 29.51 70.97 29.90 70.97 C31.07 70.97 31.67 72.43 31.67 72.88 C31.67 72.95 31.61 73.03 31.47 73.09 C31.52 73.23 31.76 73.40 31.90 73.40 C32.15 73.40 32.27 73.26 32.27 73.00 C32.31 71.96 31.06 70.51 30.05 70.55 C27.45 70.55 25.40 74.97 25.40 77.31 C25.40 78.24 26.03 78.73 26.87 78.73 C27.77 78.73 28.70 78.44 29.67 77.86 C30.08 77.62 30.48 77.27 30.48 76.96 C30.48 76.79 30.33 76.67 30.20 76.67 C30.11 76.67 30.11 76.85 30.07 76.90 M43.43 76.70 C43.40 76.99 43.26 77.28 43.02 77.56 C42.79 77.82 42.54 77.95 42.31 77.95 C42.02 77.95 41.89 77.75 41.89 77.34 C41.90 76.93 42.01 76.69 42.12 76.47 C42.57 76.27 42.80 76.07 42.80 75.87 C42.80 75.77 42.71 75.71 42.59 75.71 C42.16 75.71 41.82 75.92 41.58 76.35 C41.03 76.61 40.54 76.94 40.10 77.33 C40.20 76.94 40.59 76.29 40.85 75.90 L41.03 75.61 C41.03 75.57 40.88 75.48 40.82 75.48 C40.52 75.48 40.26 75.72 40.00 76.21 C39.01 77.34 38.28 77.91 37.82 77.91 C37.59 77.91 37.47 77.80 37.47 77.59 C37.47 77.45 37.53 77.16 37.67 76.73 L37.89 76.01 C37.92 75.86 37.94 75.74 37.94 75.63 C37.94 75.40 37.79 75.29 37.59 75.29 C37.22 75.29 36.59 75.90 36.09 76.53 C35.84 76.84 35.60 77.11 35.34 77.37 C34.62 78.12 34.44 77.57 34.44 77.31 L34.45 77.25 C34.19 77.27 33.99 77.42 33.99 77.71 C34.01 77.95 34.22 78.18 34.53 78.18 C34.76 78.18 34.97 78.09 35.20 77.91 C35.36 77.77 35.59 77.54 35.89 77.19 L36.73 76.26 C37.24 75.72 37.34 75.81 37.34 76.01 C37.34 76.09 37.28 76.30 37.18 76.64 C37.07 76.98 36.99 77.19 36.98 77.28 C36.96 77.40 36.95 77.50 36.95 77.56 C36.95 78.00 37.18 78.21 37.63 78.21 C37.94 78.21 38.26 78.05 38.74 77.66 C38.96 77.46 39.15 77.33 39.26 77.22 L39.81 76.69 C39.71 76.94 39.62 77.25 39.51 77.63 C39.50 77.71 39.49 77.82 39.49 77.95 C39.49 78.12 39.62 78.23 39.76 78.23 C39.88 78.23 39.93 77.98 40.00 77.83 C40.23 77.43 40.71 77.07 41.43 76.73 C41.37 76.93 41.33 77.11 41.33 77.30 C41.33 77.92 41.69 78.23 42.18 78.23 C42.59 78.23 42.96 78.05 43.28 77.69 C43.60 77.34 43.77 76.94 43.77 76.50 C43.77 76.33 43.72 76.12 43.61 75.87 C43.52 75.61 43.42 75.49 43.31 75.49 C43.20 75.49 43.08 75.71 43.08 75.87 C43.08 76.00 43.43 76.03 43.43 76.70 M47.73 71.35 C47.10 71.67 46.81 72.14 46.79 72.98 C46.79 73.27 46.84 73.73 46.92 74.35 C46.99 74.94 47.04 75.40 47.04 75.69 C47.04 76.40 46.76 77.98 45.72 77.98 C45.34 77.98 45.07 77.74 45.07 77.39 C45.07 77.08 45.19 76.76 45.42 76.44 C45.66 76.12 45.92 75.95 46.21 75.95 C46.26 75.95 46.32 75.97 46.37 76.00 C46.40 75.95 46.41 75.89 46.43 75.81 C46.43 75.69 46.27 75.54 46.08 75.54 C45.71 75.54 45.37 75.71 45.05 76.06 C44.73 76.40 44.58 76.78 44.56 77.20 C44.56 77.82 44.94 78.26 45.66 78.27 C46.67 78.27 47.21 77.50 47.42 76.64 C47.50 76.35 47.53 76.04 47.53 75.75 C47.53 75.45 47.48 74.99 47.41 74.39 C47.33 73.79 47.28 73.35 47.28 73.08 C47.28 72.42 47.48 71.93 47.86 71.61 C48.03 71.47 48.28 71.36 48.63 71.27 C48.98 71.16 49.29 71.12 49.53 71.12 C49.88 71.12 50.08 71.27 50.14 71.56 C50.45 71.52 50.56 71.43 50.56 71.18 C50.56 70.81 49.98 70.81 49.76 70.81 L49.70 70.81 C49.07 70.81 48.42 71.00 47.73 71.35 M56.11 76.30 C56.11 75.86 55.73 75.45 55.42 75.45 C55.22 75.45 54.88 75.66 54.88 75.86 C54.88 75.87 55.69 76.04 55.69 76.49 C55.69 76.91 55.51 77.28 55.13 77.57 C54.76 77.86 54.40 78.02 54.03 78.02 C53.49 78.02 53.12 77.65 53.12 76.96 C53.12 76.73 53.16 76.49 53.20 76.21 C54.24 75.61 55.46 74.45 56.26 73.17 C56.67 72.53 56.87 71.97 56.87 71.50 C56.87 71.16 56.69 71.00 56.31 71.00 C55.97 71.00 55.54 71.27 55.01 71.82 C54.49 72.37 54.00 73.08 53.52 73.92 C53.06 74.76 52.76 75.55 52.62 76.30 C52.21 76.52 51.84 76.62 51.55 76.62 C51.34 76.62 51.15 76.56 51.02 76.46 C51.03 76.32 51.05 76.21 51.05 76.15 C51.05 75.69 50.92 75.46 50.66 75.46 C50.62 75.46 50.59 75.48 50.54 75.51 C50.46 75.52 50.34 75.74 50.34 75.86 C50.34 76.16 50.43 76.40 50.63 76.56 C50.51 77.22 50.05 77.79 49.46 77.79 C49.16 77.79 48.98 77.56 48.98 77.25 C48.98 76.96 49.10 76.64 49.33 76.32 C49.56 75.98 49.81 75.81 50.07 75.81 C50.11 75.81 50.16 75.83 50.19 75.87 C50.23 75.83 50.25 75.75 50.25 75.68 C50.25 75.49 50.16 75.40 49.96 75.40 C49.58 75.40 49.23 75.58 48.94 75.94 C48.64 76.29 48.49 76.70 48.49 77.20 C48.49 77.71 48.80 78.15 49.39 78.15 C50.08 78.15 50.69 77.50 50.95 76.75 C51.09 76.79 51.23 76.81 51.38 76.81 C51.78 76.81 52.18 76.71 52.59 76.52 C52.58 76.71 52.56 76.88 52.56 77.02 C52.56 77.89 53.09 78.34 53.84 78.34 C54.40 78.34 54.92 78.14 55.39 77.73 C55.86 77.31 56.11 76.84 56.11 76.30 M56.14 71.65 C56.31 71.65 56.38 71.75 56.38 71.94 C56.44 72.85 54.47 75.29 53.25 75.98 C53.42 75.36 53.68 74.70 54.04 74.01 C54.41 73.32 54.79 72.77 55.17 72.33 C55.57 71.88 55.89 71.65 56.14 71.65 M58.37 75.54 C58.37 75.34 58.19 75.19 57.99 75.19 C57.48 75.14 56.47 76.81 56.52 77.50 C56.52 77.98 56.90 78.27 57.51 78.27 C57.85 78.27 58.19 78.17 58.51 77.95 C58.83 77.73 59.00 77.48 59.00 77.20 C59.00 76.78 58.45 76.47 57.88 76.47 C57.68 76.47 57.51 76.56 57.51 76.76 C57.51 76.82 57.56 76.94 57.61 76.94 L57.64 76.93 L57.67 76.90 C57.71 76.88 57.85 76.87 58.05 76.87 C58.34 76.87 58.55 77.02 58.55 77.25 C58.55 77.68 58.05 78.05 57.58 78.05 C57.27 78.05 57.01 77.77 57.01 77.45 C56.98 76.76 58.00 75.52 58.37 75.54 M63.84 76.70 C63.80 76.99 63.66 77.28 63.43 77.56 C63.20 77.82 62.96 77.95 62.73 77.95 C62.44 77.95 62.30 77.75 62.30 77.34 C62.29 76.93 62.45 76.69 62.51 76.47 C62.97 76.27 63.20 76.07 63.20 75.87 C63.20 75.77 63.11 75.71 63.00 75.71 C62.58 75.71 62.24 75.92 61.99 76.35 C61.43 76.61 60.94 76.94 60.51 77.33 C60.62 76.94 60.99 76.29 61.24 75.90 L61.44 75.61 C61.44 75.57 61.29 75.48 61.21 75.48 C60.74 75.48 60.31 76.19 59.93 77.63 C59.92 77.71 59.90 77.82 59.90 77.95 C59.90 78.12 60.01 78.23 60.17 78.23 C60.31 78.23 60.31 77.94 60.40 77.82 C60.63 77.40 61.12 77.02 61.84 76.70 C61.76 76.90 61.73 77.10 61.73 77.30 C61.73 77.92 62.09 78.23 62.58 78.23 C62.99 78.23 63.36 78.05 63.68 77.69 C64.00 77.34 64.17 76.94 64.17 76.50 C64.17 76.33 64.12 76.12 64.03 75.87 C63.94 75.61 63.83 75.49 63.71 75.49 C63.63 75.49 63.48 75.71 63.48 75.87 C63.48 75.94 63.84 76.07 63.84 76.70 M70.54 78.37 C70.74 78.44 70.89 78.47 71.00 78.47 C71.17 78.47 71.31 78.35 71.31 78.21 L71.28 78.15 L71.25 78.17 C71.20 78.18 71.14 78.20 71.09 78.20 C70.36 78.20 70.04 77.20 69.93 76.65 C70.60 76.12 71.06 75.86 71.32 75.86 L71.35 75.86 L71.38 75.86 C71.57 75.84 71.40 75.39 71.12 75.45 C70.70 75.45 70.10 75.86 69.35 76.69 L69.14 76.91 L68.85 77.22 L68.60 77.46 C68.40 77.66 68.25 77.75 68.17 77.75 C68.13 77.75 68.10 77.74 68.10 77.71 C68.10 77.53 68.17 77.27 68.34 76.94 C68.48 76.65 68.97 75.94 68.97 75.72 C68.97 75.52 68.80 75.37 68.57 75.36 C68.52 75.36 68.39 75.57 68.17 76.01 C67.97 76.46 67.84 76.75 67.79 76.88 C67.62 77.30 67.55 77.62 67.55 77.85 C67.55 78.11 67.65 78.24 67.87 78.24 C67.97 78.24 68.11 78.20 68.28 78.09 C68.45 77.98 68.66 77.79 68.83 77.65 C69.00 77.48 69.32 77.16 69.50 77.02 C69.64 77.62 70.01 78.12 70.54 78.37 M80.11 76.06 C80.11 75.74 79.90 75.58 79.61 75.58 C79.23 75.58 78.89 75.75 78.62 76.09 C78.34 76.42 78.20 76.79 78.20 77.19 C78.20 77.33 78.22 77.46 78.26 77.59 C77.44 77.88 76.72 78.03 76.12 78.03 C75.63 78.03 75.24 77.77 75.24 77.36 C75.24 77.08 75.36 76.78 75.62 76.42 C75.88 76.07 76.15 75.90 76.43 75.90 C76.57 75.90 76.63 76.01 76.63 76.21 C76.63 76.29 76.61 76.44 76.61 76.49 L76.66 76.53 C76.89 76.53 77.04 76.32 77.04 76.12 C77.04 75.80 76.67 75.48 76.29 75.48 C75.88 75.48 75.48 75.69 75.11 76.10 C74.76 76.52 74.58 76.91 74.58 77.31 C74.58 77.97 75.13 78.29 75.79 78.29 C76.46 78.29 77.30 78.11 78.31 77.73 C78.51 78.11 78.92 78.29 79.34 78.29 C79.78 78.29 80.21 78.15 80.62 77.86 C81.03 77.57 81.25 77.30 81.25 77.07 C81.25 76.93 81.17 76.87 81.02 76.87 C80.99 76.87 80.97 76.90 80.97 76.94 C80.97 77.63 80.05 78.03 79.52 78.03 C79.15 78.03 78.92 77.80 78.82 77.48 C79.63 77.13 80.11 76.59 80.11 76.06 M78.77 77.16 C78.77 76.87 78.86 76.61 79.04 76.38 C79.23 76.15 79.40 76.04 79.53 76.04 C79.67 76.04 79.73 76.12 79.73 76.26 C79.73 76.58 79.35 77.08 78.78 77.34 C78.77 77.30 78.77 77.24 78.77 77.16 M84.75 71.35 C84.12 71.67 83.83 72.14 83.82 72.98 C83.82 73.27 83.86 73.73 83.94 74.35 C84.01 74.94 84.06 75.40 84.06 75.69 C84.06 76.40 83.79 77.98 82.74 77.98 C82.36 77.98 82.09 77.74 82.09 77.39 C82.09 77.08 82.21 76.76 82.44 76.44 C82.68 76.12 82.94 75.95 83.24 75.95 C83.28 75.95 83.34 75.97 83.39 76.00 C83.42 75.95 83.43 75.89 83.45 75.81 C83.45 75.69 83.30 75.54 83.10 75.54 C82.73 75.54 82.39 75.71 82.07 76.06 C81.75 76.40 81.60 76.78 81.58 77.20 C81.58 77.82 81.97 78.26 82.68 78.27 C83.69 78.27 84.23 77.50 84.44 76.64 C84.52 76.35 84.55 76.04 84.55 75.75 C84.55 75.45 84.50 74.99 84.43 74.39 C84.35 73.79 84.31 73.35 84.31 73.08 C84.31 72.42 84.50 71.93 84.89 71.61 C85.05 71.47 85.30 71.36 85.65 71.27 C86.00 71.16 86.31 71.12 86.55 71.12 C86.90 71.12 87.10 71.27 87.17 71.56 C87.47 71.52 87.58 71.43 87.58 71.18 C87.58 70.81 87.00 70.81 86.78 70.81 L86.72 70.81 C86.09 70.81 85.44 71.00 84.75 71.35 M85.36 77.17 C85.36 78.18 86.31 78.41 87.23 78.00 C87.84 77.74 88.39 77.27 88.39 76.94 C88.39 76.81 88.31 76.73 88.14 76.73 L88.10 76.78 L88.10 76.81 C88.10 77.50 87.12 77.86 86.55 77.86 C86.14 77.86 85.94 77.62 85.94 77.13 C86.61 76.94 87.24 76.40 87.24 75.90 C87.24 75.71 87.07 75.58 86.81 75.58 C86.43 75.58 86.09 75.75 85.80 76.10 C85.51 76.44 85.36 76.79 85.36 77.17 M86.67 76.07 C86.74 76.07 86.77 76.10 86.77 76.15 C86.77 76.44 86.37 76.79 86.00 76.90 C86.12 76.52 86.45 76.07 86.67 76.07Z"/></symbol>
+    <symbol id="drop" viewBox="0 0 12 14"><path fill="currentColor" d="M6 0C6 0 0 6.2 0 9.4 0 12 2.7 14 6 14s6-2 6-4.6C12 6.2 6 0 6 0z"/></symbol>
+    <symbol id="check" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></symbol>
+    <symbol id="wipes" viewBox="0 0 256 256"><path fill="currentColor" d="M216 72h-32V56a24 24 0 0 0-24-24H96a24 24 0 0 0-24 24v16H40a16 16 0 0 0-16 16v24a16 16 0 0 0 16 16h4l9 80a16 16 0 0 0 16 15h118a16 16 0 0 0 16-15l9-80h4a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16ZM88 56a8 8 0 0 1 8-8h64a8 8 0 0 1 8 8v16H88Zm99 152H69l-8-72h134ZM216 112H40V88h176Z"/></symbol>
+    <symbol id="atom" viewBox="0 0 256 256"><path d="M196.12,128c24.65-34.61,37.22-70.38,19.74-87.86S162.61,35.23,128,59.88C93.39,35.23,57.62,22.66,40.14,40.14S35.23,93.39,59.88,128c-24.65,34.61-37.22,70.38-19.74,87.86h0c5.63,5.63,13.15,8.14,21.91,8.14,18.48,0,42.48-11.17,66-27.88C151.47,212.83,175.47,224,194,224c8.76,0,16.29-2.52,21.91-8.14h0C233.34,198.38,220.77,162.61,196.12,128Zm8.43-76.55c7.64,7.64,2.48,32.4-18.52,63.28a300.33,300.33,0,0,0-21.19-23.57A300.33,300.33,0,0,0,141.27,70C172.15,49,196.91,43.8,204.55,51.45ZM176.29,128a289.14,289.14,0,0,1-22.7,25.59A289.14,289.14,0,0,1,128,176.29a289.14,289.14,0,0,1-25.59-22.7A289.14,289.14,0,0,1,79.71,128a289.14,289.14,0,0,1,22.7-25.59A289.14,289.14,0,0,1,128,79.71a289.14,289.14,0,0,1,25.59,22.7A289.14,289.14,0,0,1,176.29,128ZM51.45,51.45c2.2-2.21,5.83-3.35,10.62-3.35C73.89,48.1,92.76,55,114.73,70a304,304,0,0,0-23.57,21.19A304,304,0,0,0,70,114.73C49,83.85,43.81,59.09,51.45,51.45Zm0,153.1C43.81,196.91,49,172.15,70,141.27a300.33,300.33,0,0,0,21.19,23.57A300.33,300.33,0,0,0,114.73,186C83.85,207,59.09,212.19,51.45,204.55Zm153.1,0C196.91,212.19,172.15,207,141.27,186a300.33,300.33,0,0,0,23.57-21.19A300.33,300.33,0,0,0,186,141.27C207,172.15,212.19,196.91,204.55,204.55ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"/></symbol>
+  </defs>
+</svg>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var saved=null; try{saved=localStorage.getItem('miss-lang')}catch(e){}
+  var lang=(saved==='kk'||saved==='ru')?saved:'ru';
+  function setLang(l){
+    lang=l; root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===l))});
+    try{localStorage.setItem('miss-lang',l)}catch(e){}
+  }
+  setLang(lang);
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+  var btn=document.getElementById('copy-mail'), code=document.getElementById('mail');
+  if(btn){btn.addEventListener('click',function(){
+    var t=code.textContent, done=function(){btn.textContent=(lang==='kk')?'Көшірілді':'Скопировано'; setTimeout(function(){btn.textContent=(lang==='kk')?'Көшіру':'Скопировать'},1500)};
+    var fallback=function(){var r=document.createRange(); r.selectNodeContents(code); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  })}
+})();
+</script>
+</body>
+</html>
